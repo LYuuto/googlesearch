@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    
+    <style>
+      .header {
+        position: absolute;
+        top: 0;
+      }
+      .logo {
+        position: absolute;
+        top: 18px;
+        left: 16px;
+        z-index: 2;
+      }
+      .main h5 {
+        color: #d93025;
+        padding-top: 2.5rem !important;
+      }
+
+      .col-form-label {
+        font-size: 13px;
+        color: #222;
+      }
+      .sidehead {
+        font: 13px;
+        color: #777;
+        font-weight: 400;
+      }
+      .side {
+        font-size: 11px;
+        color: #555;
+      }
+
+      .side>span {
+        color: #666;
+        font-family: monospace;
+      }
+
+      .form-control {
+        border-radius: 1px;
+        line-height: 1;
+        font-size: 13px;
+      }
+      .form-control:focus {
+        box-shadow: inset 0px 1px 3px 0px #838383;
+        border: 1.5px solid #4285F4;
+      }
+      .btn-search {
+        background: #4d90FE;
+        color: #fff;
+        height: 30px;
+        font-size: 13px;
+        border-radius: 3px;
+      }
+      .btn-search:hover {
+        color: #fff;
+        border: 0.3px solid #555;
+        background: #3f85f7;
+      }
+    </style>
+
+</head>
+<body>
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="74" height="24" viewBox="0 0 74 24"><path fill="#4285F4" d="M9.24 8.19v2.46h5.88c-.18 1.38-.64 2.39-1.34 3.1-.86.86-2.2 1.8-4.54 1.8-3.62 0-6.45-2.92-6.45-6.54s2.83-6.54 6.45-6.54c1.95 0 3.38.77 4.43 1.76L15.4 2.5C13.94 1.08 11.98 0 9.24 0 4.28 0 .11 4.04.11 9s4.17 9 9.13 9c2.68 0 4.7-.88 6.28-2.52 1.62-1.62 2.13-3.91 2.13-5.75 0-.57-.04-1.1-.13-1.54H9.24z"/><path fill="#EA4335" d="M25 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z"/><path fill="#4285F4" d="M53.58 7.49h-.09c-.57-.68-1.67-1.3-3.06-1.3C47.53 6.19 45 8.72 45 12c0 3.26 2.53 5.81 5.43 5.81 1.39 0 2.49-.62 3.06-1.32h.09v.81c0 2.22-1.19 3.41-3.1 3.41-1.56 0-2.53-1.12-2.93-2.07l-2.22.92c.64 1.54 2.33 3.43 5.15 3.43 2.99 0 5.52-1.76 5.52-6.05V6.49h-2.42v1zm-2.93 8.03c-1.76 0-3.1-1.5-3.1-3.52 0-2.05 1.34-3.52 3.1-3.52 1.74 0 3.1 1.5 3.1 3.54.01 2.03-1.36 3.5-3.1 3.5z"/><path fill="#FBBC05" d="M38 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z"/><path fill="#34A853" d="M58 .24h2.51v17.57H58z"/><path fill="#EA4335" d="M68.26 15.52c-1.3 0-2.22-.59-2.82-1.76l7.77-3.21-.26-.66c-.48-1.3-1.96-3.7-4.97-3.7-2.99 0-5.48 2.35-5.48 5.81 0 3.26 2.46 5.81 5.76 5.81 2.66 0 4.2-1.63 4.84-2.57l-1.98-1.32c-.66.96-1.56 1.6-2.86 1.6zm-.18-7.15c1.03 0 1.91.53 2.2 1.28l-5.25 2.17c0-2.44 1.73-3.45 3.05-3.45z"/></svg>
+    </a>
+    <div class="fluid-container d-flex justify-content-end header">
+        <ul class="nav my-2">
+            <li class="nav-item"><a href="index.html" class="nav-link">Google search</a></li>
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link hov" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="material-symbols-outlined">apps</span>
+                    </a>
+                  
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+
+                      <li><hr class="dropdown-divider"></li>
+
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                      <li><a class="dropdown-item" href="#">
+                        <span class="material-symbols-outlined">
+                            admin_panel_settings
+                        </span>
+                        <br>
+                        Accounts
+                      </a></li>
+                    </ul>
+                  </div>
+            </li>
+            <li class="nav-item px-3"><button type="button" class="btn btn-primary">Sign in</button></li>
+        </ul>
+    </div>
+
+    <div class="fluid-container pt-5 main">
+      <h5 class="px-5 py-3">Search for details</h5>
+      <hr>
+      <div class="fluid-container px-5">
+        <form action="https://www.google.com/search" method="get">
+            <div class="row">
+              <p class="col-7">Find pages with...</p>
+              <p class="col-4 d-none d-lg-inline sidehead">Do it where you want</p>
+            </div>
+            <div class="row d-flex align-items-center">
+              <label for="all" class="col-3 col-lg-2 col-form-label">
+                All these words,
+              </label>
+              <div class="col-5">
+                <input type="text" class="form-control" id="all" name="as_q">
+              </div>
+              <div class="col-4 d-none d-lg-inline">
+                <p class="side p-2">to type important words; <span>A tricolor rat terrier dog</span></p>
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center">
+              <label for="all" class="col-3 col-lg-2 col-form-label">
+                Exactly as this word (or phrase)
+              </label>
+              <div class="col-5">
+                <input type="text" class="form-control" id="all" name="as_epq">
+              </div>
+              <div class="col-4 d-none d-lg-inline">
+                <p class="side p-2">Type the exact phrase inside the eyelash (" "); <span>"Rat Terrier Dog"</span></p>
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center">
+              <label for="all" class="col-3 col-lg-2 col-form-label">
+                Any word
+              </label>
+              <div class="col-5">
+                <input type="text" class="form-control" id="all" name="as_oq">
+              </div>
+              <div class="col-4 d-none d-lg-inline">
+                <p class="side p-2">Type <span>OR</span> between the words you want to search for .  <span>Small OR record</span></p>
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center">
+              <label for="all" class="col-3 col-lg-2 col-form-label">
+                Except for these words.
+              </label>
+              <div class="col-5">
+                <input type="text" class="form-control" id="all" name="as_eq">
+              </div>
+              <div class="col-4 d-none d-lg-inline">
+                <p class="side p-2">Put a negative sign in front of words you don't want to search for. <span>-mouse - "Jack Russell"</span></p>
+              </div>
+            </div>
+
+            <div class="col-7 d-flex justify-content-end">
+              <button type="submit" class="btn btn-search mx-2 d-flex align-items-center">Search for details</button>
+            </div>
+        </form>
+      </div>
+    </div>
+    
+
+
+
+
+
+    <div class="fluid-container footer bg-light">
+        <ul class="d-flex flex-row">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
